@@ -1,0 +1,183 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    background-color: #0d0925;
+
+  font-family: "Fira Sans", sans-serif;
+
+}
+  
+  
+  a{
+    color: inherit;
+    text-decoration: none;
+    transition: 0.25s ease;
+  }
+  
+  /* Styles for header and navigation */
+  header {
+    background-color: #333;
+    padding: 10px;
+    
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-left: 0.75em;
+    margin-right: 0.75em;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    position: relative; /* Add relative positioning */
+  }
+  nav ul li a:hover {
+    color: #5cdb95;
+  }
+  nav ul li a:hover::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #5cdb95;
+    bottom: 0;
+    left: 0;
+  }
+  ul:hover a {
+    color: #575757;
+  }
+  ul:hover a:hover{
+    color: #5cdb95;
+    box-shadow: 0 2px 0 0 currentColor;
+  }
+  
+  /* Styles for sections */
+  section {
+    padding: 50px;
+  }
+  
+  section h2 {
+    margin-bottom: 20px;
+  }
+  
+  /* Styles for footer */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+/* about section */
+
+/* Styles for the team member section */
+.team-members {
+  display: flex;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Hide scrollbar for a smoother look */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  transition: transform 0.5s ease-in-out;
+  justify-content: flex-start; /* Adjust alignment to the start */
+  width: 100%; /* Make the container take full width */
+}
+
+.team-member {
+  width: 100%; /* Make each team member take full width */
+  display: none; /* Hide all team members by default */
+  opacity: 0;
+  background-color: #f4f4f4; /* Set background color */
+  padding: 20px; /* Add padding for spacing */
+  border-radius: 10px; /* Add rounded corners */
+  position: relative; /* Enable relative positioning */
+  transition: opacity 0.5s ease-in-out; /* Add transition for opacity */
+}
+
+.team-member.active {
+  display: flex; /* Display the active team member */
+  opacity: 1;
+  justify-content: space-between; /* Align content to the middle right */
+  align-items: center; /* Center vertically */
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Make the image circular */
+  border: 2px solid #000000; /* Border style */
+  object-fit: cover; /* Ensure the image fills the container */
+  transition: transform 0.3s ease-in-out; /* Add transition for hover effect */
+}
+
+.team-member:hover img {
+  transform: scale(1.1); /* Scale up the image on hover */
+}
+
+.team-member-content {
+  flex: 1; /* Let the content expand and take available space */
+}
+
+.team-member h3 {
+  margin-top: 0;
+  font-size: 1.2rem; /* Increase font size for the heading */
+  text-align:left; 
+  margin-left: 20px;
+}
+
+.team-member p {
+  margin-bottom: 0;
+  text-align: left; 
+  margin-left: 20px;
+}
+
+/* Styles for the slider navigation button */
+#next-button {
+  margin-top: 20px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#next-button:hover {
+  background-color: #333333;
+}
+
+#next-button::after {
+  content: "\2192"; /* Right arrow symbol */
+  margin-left: 5px;
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 768px) {
+  .team-member {
+    flex-direction: column; /* Stack image and content vertically on small screens */
+    align-items: center; /* Adjust alignment for stacked layout */
+    text-align: center; /* Adjust text alignment to the center */
+  }
+  
+  .team-member img {
+    margin-right: 0; /* Remove right margin to align image to the center */
+    margin-bottom: 15px;
+  }
+  
+  .team-member h3 {
+    margin-top: 15px;
+    font-size: 1.1rem; /* Reduce font size for better visibility on small screens */
+  }
+}
+

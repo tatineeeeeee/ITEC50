@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Personal Portfolio</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h1>Welcome to our Portfolio</h1>
+    <!-- Content for the home section -->
+  </section>
+  <section id="about">
+    <h2>About Us</h2>
+    <div class="team-members slider">
+      <div class="team-member active">
+        <img src="⭒.jpg" alt="Person 1">
+        <div class="member-details">
+          <h3>Person 1</h3>
+          <p>Role/Position</p>
+          <p>I'm Justine Cesar Ocampo, a student web developer passionate about creating functional and visually appealing websites and applications. Pursuing a degree in BS Information Technology, I have experience in programming languages such as HTML, CSS, JavaScript, Java, and Python. I'm a creative problem-solver and always eager to learn new web development skills and techniques. In my free time, I practice coding, play online video games such as LOL and Valorant, and read about manhwa, manga, and science, technology and innovation.</p>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="⭒.jpg" alt="Person 2">
+        <div class="member-details">
+          <h3>Person 2</h3>
+          <p>Role/Position</p>
+          <p>I'm Justine Cesar Ocampo, a student web developer passionate about creating functional and visually appealing websites and applications. Pursuing a degree in BS Information Technology, I have experience in programming languages such as HTML, CSS, JavaScript, Java, and Python. I'm a creative problem-solver and always eager to learn new web development skills and techniques. In my free time, I practice coding, play online video games such as LOL and Valorant, and read about manhwa, manga, and science, technology and innovation.</p>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="⭒.jpg" alt="Person 3">
+        <div class="member-details">
+          <h3>Person 3</h3>
+          <p>Role/Position</p>
+          <p>I'm Justine Cesar Ocampo, a student web developer passionate about creating functional and visually appealing websites and applications. Pursuing a degree in BS Information Technology, I have experience in programming languages such as HTML, CSS, JavaScript, Java, and Python. I'm a creative problem-solver and always eager to learn new web development skills and techniques. In my free time, I practice coding, play online video games such as LOL and Valorant, and read about manhwa, manga, and science, technology and innovation.</p>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="⭒.jpg" alt="Person 4">
+        <div class="member-details">
+          <h3>Person 4</h3>
+          <p>Role/Position</p>
+          <p>I'm Justine Cesar Ocampo, a student web developer passionate about creating functional and visually appealing websites and applications. Pursuing a degree in BS Information Technology, I have experience in programming languages such as HTML, CSS, JavaScript, Java, and Python. I'm a creative problem-solver and always eager to learn new web development skills and techniques. In my free time, I practice coding, play online video games such as LOL and Valorant, and read about manhwa, manga, and science, technology and innovation.</p>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="⭒.jpg" alt="Person 5">
+        <div class="member-details">
+          <h3>Person 5</h3>
+          <p>Role/Position</p>
+          <p>I'm Justine Cesar Ocampo, a student web developer passionate about creating functional and visually appealing websites and applications. Pursuing a degree in BS Information Technology, I have experience in programming languages such as HTML, CSS, JavaScript, Java, and Python. I'm a creative problem-solver and always eager to learn new web development skills and techniques. In my free time, I practice coding, play online video games such as LOL and Valorant, and read about manhwa, manga, and science, technology and innovation.</p>
+        </div>
+      </div>
+    </div>
+    <button id="next-button">Next</button>
+  </section>
+  
+    
+  
+  
+  
+
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <!-- Content for the portfolio section -->
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <!-- Content for the services section -->
+  </section>
+
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <!-- Content for the testimonials section -->
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <!-- Content for the contact section -->
+  </section>
+
+  <footer>
+    <!-- Footer content -->
+  </footer>
+  <script>
+
+// JavaScript for the team member slider
+const teamMembers = document.querySelectorAll('.team-member');
+const nextButton = document.getElementById('next-button');
+
+let activeMemberIndex = 0;
+
+function showActiveMember() {
+  teamMembers.forEach((member, index) => {
+    if (index === activeMemberIndex) {
+      member.classList.add('active');
+    } else {
+      member.classList.remove('active');
+    }
+  });
+}
+
+function nextMember() {
+  activeMemberIndex++;
+  if (activeMemberIndex >= teamMembers.length) {
+    activeMemberIndex = 0;
+  }
+  showActiveMember();
+}
+
+// Show the next team member automatically after 5 seconds
+function autoNextMember() {
+  nextMember();
+  setTimeout(autoNextMember, 1000); // Change time interval here (in milliseconds)
+}
+
+nextButton.addEventListener('click', nextMember);
+
+// Show the initial active member
+showActiveMember();
+
+// Start the automatic slide show
+setTimeout(autoNextMember, 1000); // Change time interval here (in milliseconds)
+
+
+  </script>
+  
+</body>
+</html>
